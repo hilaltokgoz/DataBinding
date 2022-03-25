@@ -12,13 +12,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
+        //data ile oluşturulan variable
+        binding.mainActivityObject=this //burası mainActivityObject
 
-      binding.resultButton.setOnClickListener {
-          val firstNumber=binding.firstNumberEditText.text.toString().toInt()
-          val secondNumber=binding.secondNumberEditText.text.toString().toInt()
-          val avarage=(firstNumber+secondNumber)/2
-          binding.resultTextView.text=avarage.toString()
-      }
+        binding.avarageResult="0" //null harası almamak için default değer verdik.
 
+    }
+    fun avarageCalculation(firstNumber:String,secondNumber:String){
+        val firstNumber=firstNumber.toInt()
+        val secondNumber=secondNumber.toInt()
+        val avarage=(firstNumber+secondNumber)/2
+        binding.avarageResult=avarage.toString()
     }
 }
