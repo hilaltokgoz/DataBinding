@@ -9,6 +9,7 @@
         <variable
             name="avarageResult"
             type="String" />
+        <import type="android.view.View"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -79,6 +80,7 @@
             android:background="@color/light_gray"
             android:text="@{avarageResult}"
             android:textColor="@{Integer.parseInt(avarageResult) > 15 ? @color/green: @color/red}"
+            android:visibility="@{Integer.parseInt(avarageResult)>20 ? View.INVISIBLE :View.VISIBLE}"
             android:textSize="24dp"
             android:gravity="center"
             android:layout_marginTop="70dp">
